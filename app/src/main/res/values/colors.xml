@@ -13,4 +13,9 @@
     <color name="text_hint">#767E91</color>
     <color name="button_background">#DF9323</color>
 
+    <color name="under_weight">#855713</color>
+    <color name="normal">#4CAF58</color>
+    <color name="over_weight">#783740</color>
+    <color name="obese">#872721</color>
+
 </resources>
