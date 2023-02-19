@@ -16,6 +16,6 @@
     <color name="under_weight">#855713</color>
     <color name="normal">#4CAF58</color>
     <color name="over_weight">#783740</color>
-    <color name="obese">#872721</color>
+    <color name="obese">#DF1F13</color>
 
 </resources>

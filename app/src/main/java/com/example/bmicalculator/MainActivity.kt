@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
@@ -21,11 +22,28 @@ class MainActivity : AppCompatActivity() {
             val weight = weightText.text.toString()
             val height = heightText.text.toString()
 
-            val bmi = weight.toFloat()/((height.toFloat()/100)*(height.toFloat()/100))
-            //get results with two decimal places
-            val bmi2Digits = String.format("%.2f", bmi).toFloat()
+            if(validateInput(weight,height)) {
+                val bmi = weight.toFloat() / ((height.toFloat() / 100) * (height.toFloat() / 100))
+                //get results with two decimal places
+                val bmi2Digits = String.format("%.2f", bmi).toFloat()
+                displayResult(bmi2Digits)
+            }
 
-            displayResult(bmi2Digits)
+        }
+    }
+    private fun validateInput(weight:String?,height:String?):Boolean{
+        return when{
+            weight.isNullOrEmpty() -> {
+                Toast.makeText(this,  "Weight is empty",Toast.LENGTH_LONG).show()
+                return false
+            }
+            height.isNullOrEmpty() -> {
+                Toast.makeText(this,  "Height is empty",Toast.LENGTH_LONG).show()
+                return false
+            }
+            else -> {
+                return true
+            }
 
         }
     }
